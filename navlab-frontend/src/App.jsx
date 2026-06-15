@@ -44,7 +44,7 @@ function App() {
   return (
     <div className={isDarkTheme ? 'dark-theme' : 'light-theme'}>
       
-      {/* 📦 ШАПКА САЙТУ ТА НАВІГАЦІЯ (Хедер) */}
+      {}
       <header className="site-header">
         <div className="container header-container">
           <div className="logo">
@@ -92,7 +92,7 @@ function App() {
         </div>
       </header>
 
-      {/* 🏠 СЕКЦІЯ 1: ГОЛОВНА СТОРІНКА (Банер + Плитки) */}
+      {}
       {activeTab === 'home' && (
         <>
           <section className="hero-slider">
@@ -129,7 +129,7 @@ function App() {
         </>
       )}
 
-      {/* 📰 СЕКЦІЯ 2: НОВИНИ (Динамічно завантажуються з бази даних SQLite) */}
+      {}
       {activeTab === 'news' && (
         <main className="container my-5">
           <section>
@@ -150,7 +150,7 @@ function App() {
         </main>
       )}
 
-      {/* 🖼️ СЕКЦІЯ 3: ГАЛЕРЕЯ (CSS Grid адаптивна сітка) */}
+      {}
       {activeTab === 'gallery' && (
         <main className="container my-5">
           <h2 className="section-title">Галерея лабораторії</h2>
@@ -171,7 +171,7 @@ function App() {
         </main>
       )}
 
-      {/* 📄 СЕКЦІЯ 4: ПРО САЙТ */}
+      {}
       {activeTab === 'about' && (
         <main className="container my-5">
           <h2 className="section-title">Про наш веб-портал</h2>
@@ -187,7 +187,7 @@ function App() {
         </main>
       )}
 
-      {/* 📞 СЕКЦІЯ 5: КОНТАКТИ ТА ФОРМА ЗВОРОТНОГО ЗВ'ЯЗКУ */}
+      {}
       {activeTab === 'contacts' && (
         <main className="container my-5">
           <h2 className="section-title">Зворотний зв'язок</h2>
@@ -245,12 +245,12 @@ function App() {
         </main>
       )}
 
-      {/* 🏛️ УНІВЕРСИТЕТСЬКИЙ ФУТЕР */}
+      {}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-row">
             
-            {/* 🔹 Coloнка 1: Інтернет джерела */}
+            {}
             <div className="footer-col">
               <h4>Інтернет джерела</h4>
               <ul>
@@ -260,7 +260,7 @@ function App() {
               </ul>
             </div>
 
-            {/* 🔹 Колонка 2: Партнери */}
+            {}
             <div className="footer-col">
               <h4>Partners</h4>
               <ul>
@@ -294,7 +294,7 @@ function App() {
 
           </div>
 
-          {/* Інформаційний блок із картою та контактами */}
+          {}
           <div className="contact-info-block" style={{ marginTop: '30px', borderTop: '1px solid var(--border-light)', paddingTop: '20px' }}>
             <div className="footer-contacts-text">
               <h4>Навчальна лабораторія кафедри ЗВО</h4>
@@ -311,7 +311,7 @@ function App() {
             </div>
           </div>
 
-          {/* Нижня плашка (копірайт) */}
+          {}
           <div className="footer-bottom">
             <p>© {new Date().getFullYear()} Навчальна лабораторія кафедри ЗВО. Всі права захищені.</p>
           </div>
