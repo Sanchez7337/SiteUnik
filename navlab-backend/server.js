@@ -8,13 +8,11 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-// Створюємо та підключаємо базу даних (файл database.sqlite з'явиться сам)
 const db = new sqlite3.Database('./database.sqlite', (err) => {
     if (err) console.error('Помилка БД:', err.message);
     else console.log('База даних SQLite успішно підключена!');
 });
 
-// Наповнюємо таблицю твоїми реальними картками новин
 db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS news (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +25,6 @@ db.serialize(() => {
         if (row.count === 0) {
             const stmt = db.prepare("INSERT INTO news (date, title, description) VALUES (?, ?, ?)");
             
-            // Твої оригінальные дані з лабораторної
             stmt.run("13 Червня, 2026", "Старт реєстрації на хакатон з веб-дизайну", "Запрошуємо студентів усіх курсів спробувати свої сили у створенні інтерфейсів для екологічних проєктів.");
             stmt.run("10 Червня, 2026", "Оновлено методичні матеріали", "Додано нові лабораторні роботи з курсу \"Веб-програмування\" для другого курсу.");
             stmt.run("08 Червня, 2026", "Відкрита лекція від IT-компанії", "Провідний Front-End розробник поділитись секретами оптимізації рендерингу додатків.");
@@ -41,7 +38,6 @@ db.serialize(() => {
     });
 });
 
-// Роут для отримання новин фронтендом
 app.get('/api/news', (req, res) => {
     db.all("SELECT * FROM news ORDER BY id ASC", [], (err, rows) => {
         if (err) {
